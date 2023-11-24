@@ -8,7 +8,11 @@ export default function QuarrelHome() {
 
       <div className="flex flex-col gap-6">
         <CreateChannelForm />
-        <ChannelList />
+
+        <div className="flex items-center gap-8">
+          <ChannelList />
+          <div className="w-3/4">Zone de message</div>
+        </div>
       </div>
     </>
   );
