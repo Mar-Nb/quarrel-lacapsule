@@ -1,0 +1,5 @@
+.item {
+  background-color: rgb(var(--secondary-rgb));
+  padding: var(--padding);
+  border-radius: var(--radius);
+}

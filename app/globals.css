@@ -7,9 +7,26 @@
   --background-rgb: 25, 26, 27;
   --primary-rgb: 254, 160, 124;
   --secondary-rgb: 12, 182, 230;
+  --padding: .5rem .75rem;
+  --radius: .3rem;
 }
 
 body {
   background-color: rgb(var(--background-rgb));
   color: rgb(var(--foreground-rgb));
+}
+
+input {
+  color: black;
+}
+
+button[type='button'] {
+  padding: var(--padding);
+  background-color: rgb(var(--primary-rgb));
+  border-radius: var(--radius);
+  font-weight: bolder;
+}
+
+nav span {
+  color: rgb(var(--secondary-rgb));
 }

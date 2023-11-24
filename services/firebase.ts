@@ -1,9 +1,19 @@
 import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
 import { firebaseConfig } from './config';
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  onSnapshot,
+  orderBy,
+  query
+} from 'firebase/firestore';
+import { Channel } from '@/types/Channel';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 export async function loginWithGoogle() {
   try {
@@ -21,4 +31,33 @@ export async function loginWithGoogle() {
 
     return null;
   }
+}
+
+/**
+ * Create a new channel in Firestore Database with the name given.
+ * @param name Name of the channel
+ */
+export async function createChannel(name: string) {
+  try {
+    await addDoc(collection(db, 'channels'), { name });
+    console.info('Channel created');
+  } catch (error) {
+    console.error('Create channel error:', error);
+  }
+}
+
+type Callback = (channels: Channel[]) => void;
+
+export async function getChannels(callback: Callback) {
+  return onSnapshot(
+    query(collection(db, 'channels'), orderBy('name', 'asc')),
+    (querySnapshot) => {
+      const channels = querySnapshot.docs.map((channel) => ({
+        id: channel.id,
+        name: channel.data().name
+      }));
+
+      callback(channels);
+    }
+  );
 }
