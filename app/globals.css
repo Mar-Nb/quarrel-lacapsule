@@ -7,24 +7,37 @@
   --background-rgb: 25, 26, 27;
   --primary-rgb: 254, 160, 124;
   --secondary-rgb: 12, 182, 230;
-  --padding: .5rem .75rem;
-  --radius: .3rem;
+  --padding: 0.5rem 0.75rem;
+  --radius: 0.3rem;
 }
 
 body {
   background-color: rgb(var(--background-rgb));
   color: rgb(var(--foreground-rgb));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 input {
-  color: black;
+  background-color: rgb(var(--background-rgb));
+  padding: var(--padding);
+  border-radius: var(--radius);
+  border-width: 2px;
+  border-color: rgb(var(--secondary-rgb));
 }
 
-button[type='button'] {
+button[type='button'],
+button[type='submit'] {
   padding: var(--padding);
   background-color: rgb(var(--primary-rgb));
   border-radius: var(--radius);
   font-weight: bolder;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 nav span {

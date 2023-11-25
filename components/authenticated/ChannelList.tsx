@@ -1,13 +1,19 @@
 import { useChannels } from '@/hooks/useChannels';
 import ChannelItem from './ChannelItem';
 import { useState } from 'react';
+import { Channel } from '@/types/Channel';
 
-export default function ChannelList() {
+export default function ChannelList({
+  handleSelectChannel
+}: {
+  handleSelectChannel: (id: string) => void;
+}) {
   const channels = useChannels();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const handleItemClick = (index: number) => {
+  const handleItemClick = (index: number, channel: Channel) => {
     setActiveIndex(index === activeIndex ? null : index);
+    handleSelectChannel(channel.id);
   };
 
   return (
@@ -18,7 +24,7 @@ export default function ChannelList() {
             key={i}
             channel={channel}
             isActive={i === activeIndex}
-            onClick={() => handleItemClick(i)}
+            onClick={() => handleItemClick(i, channel)}
           />
         ))}
       </div>

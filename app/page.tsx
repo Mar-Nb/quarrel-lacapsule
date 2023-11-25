@@ -11,7 +11,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="mx-6 mt-2">{user ? <QuarrelHome /> : <Login />}</main>
+      <main className="mx-6 mt-2 flex flex-col h-full self-stretch">
+        {user ? <QuarrelHome /> : <Login />}
+      </main>
     </>
   );
 }

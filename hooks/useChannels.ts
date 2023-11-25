@@ -6,9 +6,10 @@ export function useChannels() {
   const [channels, setChannels] = useState<Channel[]>([]);
 
   useEffect(() => {
-    (async () => {
-      await getChannels(setChannels);
-    })();
+    const unsubscribe = getChannels(setChannels);
+    return () => {
+      unsubscribe;
+    };
   }, []);
 
   return channels;

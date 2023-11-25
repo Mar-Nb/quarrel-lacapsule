@@ -12,6 +12,7 @@ export default function CreateChannelForm() {
         <span>Nom du channel</span>
         <input
           type="text"
+          placeholder="Nom du channel..."
           value={channelName}
           onChange={(e) => setChannelName(e.target.value)}
         />
