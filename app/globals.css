@@ -49,6 +49,7 @@ nav span {
   border-color: rgb(var(--secondary-rgb));
   height: 100%;
   background-color: darkslategrey;
+  max-height: 60vh;
 }
 
 .msg-other {

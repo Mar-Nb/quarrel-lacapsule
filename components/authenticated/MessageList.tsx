@@ -16,7 +16,7 @@ export default function MessageList({ channelId }: { channelId: string }) {
 
   return (
     <div
-      className="flex flex-col gap-2 rounded-xl msg-list p-3 max-h-80 overflow-y-auto"
+      className="flex flex-col gap-2 rounded-xl msg-list p-3 overflow-y-auto"
       ref={ref}
     >
       {!channelId && <div>Sélectionner un channel</div>}
