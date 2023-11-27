@@ -21,7 +21,7 @@ export default function QuarrelHome() {
         <div className="flex items-start gap-8 h-full mb-4">
           <ChannelList handleSelectChannel={handleSelectChannel} />
 
-          <div className="flex flex-col justify-between self-stretch pt-2 w-3/4 gap-4">
+          <div className="flex flex-col justify-between self-stretch w-3/4 gap-4">
             <MessageList channelId={channelId} />
 
             <MessageInput channelId={channelId} />
