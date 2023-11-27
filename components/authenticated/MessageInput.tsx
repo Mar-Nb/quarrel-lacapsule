@@ -25,7 +25,7 @@ export default function MessageInput({ channelId }: { channelId: string }) {
         onChange={handleChange}
         required
         minLength={1}
-        className="w-3/4"
+        className="w-full"
       />
       <button type="submit" disabled={value.length < 1 || !channelId}>
         Envoyer

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ChannelList from './ChannelList';
 import CreateChannelForm from './CreateChannelForm';
 import MessageInput from './MessageInput';
+import MessageList from './MessageList';
 
 export default function QuarrelHome() {
   const [channelId, setChannelId] = useState<string>('');
@@ -21,7 +22,7 @@ export default function QuarrelHome() {
           <ChannelList handleSelectChannel={handleSelectChannel} />
 
           <div className="flex flex-col justify-between self-stretch pt-2 w-3/4 gap-4">
-            {!channelId ? <div>Sélectionner un channel</div> : <div></div>}
+            <MessageList channelId={channelId} />
 
             <MessageInput channelId={channelId} />
           </div>

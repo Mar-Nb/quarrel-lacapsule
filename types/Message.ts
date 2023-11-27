@@ -1,9 +1,9 @@
-import { FieldValue } from 'firebase/firestore';
+import { Timestamp } from 'firebase/firestore';
 
 export type Message = {
   id: string;
   uid: string;
   displayName: string;
   text: string;
-  timestamp: FieldValue;
+  timestamp: Timestamp;
 };

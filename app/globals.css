@@ -43,3 +43,18 @@ button:disabled {
 nav span {
   color: rgb(var(--secondary-rgb));
 }
+
+.msg-list {
+  border-width: 2px;
+  border-color: rgb(var(--secondary-rgb));
+  height: 100%;
+  background-color: darkslategrey;
+}
+
+.msg-other {
+  background-color: rgb(var(--primary-rgb));
+}
+
+.msg-own {
+  background-color: rgb(var(--secondary-rgb));
+}

@@ -6,7 +6,9 @@ export function useMessages(channelId: string) {
   const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
-    const unsubscribe = getMessages(channelId, setMessages);
+    const unsubscribe = getMessages(channelId, setMessages).catch((err) =>
+      console.error(err)
+    );
     return () => {
       unsubscribe;
     };
