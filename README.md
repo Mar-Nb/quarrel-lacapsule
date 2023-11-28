@@ -1,36 +1,34 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Quarrel
 
-First, run the development server:
+Une **mini-application de chat en temps réel**, avec un login via **Google** et la possibilité de créer des nouveaux channels de discussion.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+(3ème projet d'alternance à **[La Capsule](https://www.lacapsule.academy/)**)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Auteur(s)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [@Mar-Nb](https://www.github.com/Mar-Nb)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies utilisées
 
-## Learn More
+- Next.js
+- React Context
+- React Hooks
+- Tailwind CSS
+- Firebase / Firestore
 
-To learn more about Next.js, take a look at the following resources:
+## Fonctionnalités
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Identification via un compte Google (_Firebase Authenticator_)
+- Chat en temps réel (_Firestore Database_)
+- Création de nouveaux channels
+- Stockage des données de l'utilisateur dans le contexte de l'app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Ce que j'ai appris
 
-## Deploy on Vercel
+Durant ce projet, le but était de mettre à profit les outils proposés par Firebase pour construire une application avec un moyen d'authentification et des échanges en temps réel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+J'ai ainsi pu voir le côté pratique de l'utilisation d'un contexte (plus léger qu'un **Redux**), et l'intérêt que peut avoir un _custom hook_ (notamment pour récupérer les informations du contexte).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+J'ai également pu, au travers de ce projet, continuer de me familiariser avec l'**App Router** de Next.js, qui diffère relativement de l'ancienne méthode de routing de ce framework.
